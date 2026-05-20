@@ -10,6 +10,7 @@ namespace OpenApoc
 {
 
 class PaletteImage;
+class Image;
 class Palette;
 
 class BitmapFont
@@ -26,7 +27,7 @@ class BitmapFont
   public:
 	virtual ~BitmapFont();
 	virtual sp<PaletteImage> getGlyph(char32_t codepoint);
-	virtual sp<PaletteImage> getString(const UString &Text);
+	virtual sp<Image> getString(const UString &Text);
 	virtual int getFontWidth(const UString &Text);
 	virtual int getFontHeight() const;
 	virtual int getFontHeight(const UString &Text, int MaxWidth);
@@ -40,5 +41,10 @@ class BitmapFont
 	                               int fontHeight, int kerning, UString fontName,
 	                               sp<Palette> defaultPalette);
 };
+
+#if ENABLE_FREETYPE
+void FontInit();
+void FontDeinit();
+#endif
 
 }; // namespace OpenApoc

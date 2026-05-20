@@ -33,6 +33,7 @@ option(MSVC_PDB "Always generate PDB files" ON)
 option(ENABLE_TESTS "Build some unit tests" ON)
 option(USE_PCH "Enable precompiled header use during build" OFF)
 option(EXTRACT_DATA "Run the data extractor as part of the default target" ON)
+option(ENABLE_FREETYPE "Enable FreeType font rendering for CJK support" ON)
 
 set(CD_PATH ${CMAKE_SOURCE_DIR}/data/cd.iso CACHE STRING "Path to cd.iso (used
 by test and extractor")
@@ -139,6 +140,10 @@ target_link_libraries(${CMAKE_PROJECT_NAME} OpenApoc_Framework)
 target_link_libraries(${CMAKE_PROJECT_NAME} OpenApoc_Forms)
 target_link_libraries(${CMAKE_PROJECT_NAME} OpenApoc_GameState)
 target_link_libraries(${CMAKE_PROJECT_NAME} OpenApoc_GameUI)
+
+if(ENABLE_FREETYPE)
+	target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE ENABLE_FREETYPE=1)
+endif()
 
 # check dependencies and include libraries
 
@@ -277,7 +282,7 @@ add_custom_target(tidy ${CLANG_TIDY}
 
 # set(LANGUAGES en_GB fr_FR de_DE cs es it pl pt_BR ru_RU uk)
 # Add languages supported by gettext PO files - list should match the base mod - "supported_languages" in tools/extractors/main.cpp
-set(LANGUAGES "")
+set(LANGUAGES en zh_CN)
 
 find_package(Gettext)
 if (GETTEXT_FOUND)

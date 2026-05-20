@@ -26,6 +26,18 @@ extern ConfigOptionBool screenAutoScale;
 extern ConfigOptionString languageOption;
 extern ConfigOptionBool mouseCaptureOption;
 
+#if ENABLE_FREETYPE
+extern ConfigOptionString fontName;
+extern ConfigOptionInt fontBigSize;
+extern ConfigOptionInt fontSmallSize;
+extern ConfigOptionInt fontSmallsetSize;
+extern ConfigOptionInt fontCharInterval;
+extern ConfigOptionInt fontShadowRadius;
+extern ConfigOptionInt fontBigWidth;
+extern ConfigOptionInt fontSmallWidth;
+extern ConfigOptionInt fontSmallsetWidth;
+#endif
+
 extern ConfigOptionInt frameLimit;
 extern ConfigOptionInt targetFPS;
 extern ConfigOptionInt swapInterval;

@@ -47,6 +47,17 @@ void dumpOptionsToLog()
 	dumpOption(screenAutoScale);
 	dumpOption(languageOption);
 	dumpOption(mouseCaptureOption);
+#if ENABLE_FREETYPE
+	dumpOption(fontName);
+	dumpOption(fontBigSize);
+	dumpOption(fontSmallSize);
+	dumpOption(fontSmallsetSize);
+	dumpOption(fontCharInterval);
+	dumpOption(fontShadowRadius);
+	dumpOption(fontBigWidth);
+	dumpOption(fontSmallWidth);
+	dumpOption(fontSmallsetWidth);
+#endif
 
 	dumpOption(targetFPS);
 	dumpOption(frameLimit);
@@ -238,6 +249,21 @@ ConfigOptionString languageOption("Framework", "Language",
 
 ConfigOptionBool mouseCaptureOption("Framework", "MouseCapture",
                                     tr("Enable mouse capture for the window"), false);
+
+#if ENABLE_FREETYPE
+ConfigOptionString fontName("Framework", "FontName", tr("TrueType font name for CJK rendering"),
+                            "msyhl.ttc");
+ConfigOptionInt fontBigSize("Framework", "FontBigSize", tr("Big font size in pixels"), 20);
+ConfigOptionInt fontSmallSize("Framework", "FontSmallSize", tr("Small font size in pixels"), 11);
+ConfigOptionInt fontSmallsetSize("Framework", "FontSmallsetSize",
+                                 tr("Smallset font size in pixels"), 10);
+ConfigOptionInt fontCharInterval("Framework", "FontCharInterval", tr("Character interval"), 1);
+ConfigOptionInt fontShadowRadius("Framework", "FontShadowRadius", tr("Font shadow radius"), 3);
+ConfigOptionInt fontBigWidth("Framework", "FontBigWidth", tr("Big font width in pixels"), 12);
+ConfigOptionInt fontSmallWidth("Framework", "FontSmallWidth", tr("Small font width in pixels"), 8);
+ConfigOptionInt fontSmallsetWidth("Framework", "FontSmallsetWidth",
+                                  tr("Smallset font width in pixels"), 7);
+#endif
 
 ConfigOptionInt targetFPS("Framework", "TargetFPS",
                           tr("The target FPS count - affects game speed!"), 60);

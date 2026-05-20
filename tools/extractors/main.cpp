@@ -22,7 +22,7 @@ using namespace OpenApoc;
     "sk.UTF-8",    "sl_SI.UTF-8", "tr_TR.UTF-8",  "uk.UTF-8",    "zh_TW.UTF-8"};*/
 // Add languages supported by the "Base" mod here - list should match CMake's LANGUAGES, though with
 // a .UTF-8 suffix, and the "en" baseline
-std::vector<UString> supported_languages = {"en.UTF-8"};
+std::vector<UString> supported_languages = {"en.UTF-8", "zh_CN.UTF-8"};
 
 static ConfigOptionString outputPath("Extractor", "output",
                                      "Path to the extractor output directory", "./data");

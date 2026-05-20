@@ -5,6 +5,7 @@
 #include "framework/data.h"
 #include "framework/event.h"
 #include "framework/filesystem.h"
+#include "framework/font.h"
 #include "framework/image.h"
 #include "framework/jukebox.h"
 #include "framework/logger_file.h"
@@ -259,6 +260,11 @@ Framework::Framework(const UString programName, bool createWindow)
 		enableSDLDialogLogger(p->window);
 	}
 	audioInitialise(!createWindow);
+#if ENABLE_FREETYPE
+	FontInit();
+#else
+	LogWarning("ENABLE_FREETYPE is NOT defined in framework.cpp!");
+#endif
 }
 
 Framework::~Framework()
@@ -277,6 +283,9 @@ Framework::~Framework()
 		config().save();
 
 	LogInfo("Shutdown");
+#if ENABLE_FREETYPE
+	FontDeinit();
+#endif
 	// Make sure we destroy the data implementation before the renderer to ensure any possibly
 	// cached images are already destroyed
 	this->data.reset();

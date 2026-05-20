@@ -54,7 +54,7 @@ class DataImpl final : public Data
 	std::recursive_mutex paletteCacheLock;
 
 	// The cache is organised in <font name , <text, image>>
-	std::map<UString, std::map<UString, std::weak_ptr<PaletteImage>>> fontStringCache;
+	std::map<UString, std::map<UString, std::weak_ptr<Image>>> fontStringCache;
 	std::recursive_mutex fontStringCacheLock;
 
 	// Pin open 'imageCacheSize' images
@@ -62,7 +62,7 @@ class DataImpl final : public Data
 	// Pin open 'imageSetCacheSize' image sets
 	std::queue<sp<ImageSet>> pinnedImageSets;
 	std::queue<sp<LOFTemps>> pinnedLOFVoxels;
-	std::queue<sp<PaletteImage>> pinnedFontStrings;
+	std::queue<sp<Image>> pinnedFontStrings;
 	std::queue<sp<Palette>> pinnedPalettes;
 	std::list<std::unique_ptr<ImageLoader>> imageLoaders;
 	std::list<std::unique_ptr<SampleLoader>> sampleLoaders;
@@ -96,10 +96,9 @@ class DataImpl final : public Data
 	void addPaletteAlias(const UString &name, const UString &value) override;
 	void addVoxelSliceAlias(const UString &name, const UString &value) override;
 
-	sp<PaletteImage> getFontStringCacheEntry(const UString &font_name,
-	                                         const UString &text) override;
+	sp<Image> getFontStringCacheEntry(const UString &font_name, const UString &text) override;
 	void putFontStringCacheEntry(const UString &font_name, const UString &text,
-	                             sp<PaletteImage> &img) override;
+	                             sp<Image> img) override;
 
 	bool writeImage(UString systemPath, sp<Image> image, sp<Palette> palette = nullptr) override;
 };
@@ -864,7 +863,7 @@ bool DataImpl::writeImage(UString systemPath, sp<Image> image, sp<Palette> palet
 	return false;
 }
 
-sp<PaletteImage> DataImpl::getFontStringCacheEntry(const UString &font_name, const UString &string)
+sp<Image> DataImpl::getFontStringCacheEntry(const UString &font_name, const UString &string)
 {
 	std::lock_guard<std::recursive_mutex> l(this->fontStringCacheLock);
 	if (font_name == "")
@@ -874,7 +873,6 @@ sp<PaletteImage> DataImpl::getFontStringCacheEntry(const UString &font_name, con
 	}
 	if (string == "")
 	{
-		// LogWarning("Empty string");
 		return nullptr;
 	}
 	auto img = this->fontStringCache[font_name][string].lock();
@@ -882,7 +880,7 @@ sp<PaletteImage> DataImpl::getFontStringCacheEntry(const UString &font_name, con
 }
 
 void DataImpl::putFontStringCacheEntry(const UString &font_name, const UString &string,
-                                       sp<PaletteImage> &img)
+                                       sp<Image> img)
 {
 	std::lock_guard<std::recursive_mutex> l(this->fontStringCacheLock);
 	if (font_name == "")
@@ -892,7 +890,6 @@ void DataImpl::putFontStringCacheEntry(const UString &font_name, const UString &
 	}
 	if (string == "")
 	{
-		// LogWarning("Empty string");
 		return;
 	}
 	this->fontStringCache[font_name][string] = img;

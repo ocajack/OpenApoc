@@ -277,30 +277,26 @@ void UfopaediaCategoryView::setFormStats()
 
 						if (ref != player)
 						{
-							UString relation;
+							UString relation = tr(ref->name);
 							switch (ref->isRelatedTo(player))
 							{
 								case Organisation::Relation::Allied:
-									relation = format(tr("{0}: allied towards: {1}"), ref->name,
-									                  player->name);
+									relation += tr(": allied towards:");
 									break;
 								case Organisation::Relation::Friendly:
-									relation = format(tr("{0}: friendly towards: {1}"), ref->name,
-									                  player->name);
+									relation += tr(": friendly towards:");
 									break;
 								case Organisation::Relation::Neutral:
-									relation = format(tr("{0}: neutral towards: {1}"), ref->name,
-									                  player->name);
+									relation += tr(": neutral towards:");
 									break;
 								case Organisation::Relation::Unfriendly:
-									relation = format(tr("{0}: unfriendly towards: {1}"), ref->name,
-									                  player->name);
+									relation += tr(": unfriendly towards:");
 									break;
 								case Organisation::Relation::Hostile:
-									relation = format(tr("{0}: hostile towards: {1}"), ref->name,
-									                  player->name);
+									relation += tr(": hostile towards:");
 									break;
 							}
+							relation += UString(" ") + tr(player->name);
 							orgLabels[0]->setText(relation);
 							orgLabels[3]->setText(tr("Alien Infiltration"));
 							orgValues[3]->setText(format("{0}%", ref->infiltrationValue / 2));

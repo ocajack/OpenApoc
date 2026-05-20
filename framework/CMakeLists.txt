@@ -203,9 +203,15 @@ endif()
 # We use boost::locale for utf conversions and boost::filesystem for
 # serialization
 
-set(BOOST_PACKAGES locale program_options)
+set(BOOST_PACKAGES locale system program_options)
 # Arbitrary version that I remember testing previously
 set(BOOST_VERSION 1.50)
+
+if(ENABLE_FREETYPE)
+	find_package(Freetype REQUIRED)
+	target_link_libraries(OpenApoc_Framework PRIVATE Freetype::Freetype)
+	target_compile_definitions(OpenApoc_Framework PUBLIC ENABLE_FREETYPE=1)
+endif()
 
 target_compile_definitions(OpenApoc_Framework PUBLIC "-DUSE_STD_FILESYSTEM")
 

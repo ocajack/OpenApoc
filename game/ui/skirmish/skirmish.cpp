@@ -100,7 +100,7 @@ std::shared_future<void> loadBattleVehicle(bool hotseat, sp<VehicleType> vehicle
 		    auto v = mksp<Vehicle>();
 		    auto vID = Vehicle::generateObjectID(*state);
 		    v->type = {state, vehicle};
-		    v->name = format("{0} {1}", v->type->name, ++v->type->numCreated);
+		    v->name = format("{0} {1}", tr(v->type->name), ++v->type->numCreated);
 
 		    state->vehicles[vID] = v;
 		    StateRef<Vehicle> ufo = {state, vID};
@@ -631,22 +631,22 @@ void Skirmish::clearLocation()
 
 void Skirmish::updateLocationLabel()
 {
-	UString text = "[No map selected]";
+	UString text = tr("[No map selected]");
 	if (locBuilding)
 	{
-		text = format("[{0} Building] {1} [{2}]",
-		              locBuilding->owner == state.getAliens() ? "Alien" : "Human",
+		text = format(tr("[{0} Building] {1} [{2}]"),
+		              locBuilding->owner == state.getAliens() ? tr("Alien") : tr("Human"),
 		              locBuilding->name, locBuilding->battle_map.id);
 	}
 	else if (locVehicle)
 	{
-		text = format("[UFO] {0} [{1}]", locVehicle->name, locVehicle->battle_map.id);
+		text = format(tr("[UFO] {0} [{1}]"), locVehicle->name, locVehicle->battle_map.id);
 	}
 	else if (locBase)
 	{
-		text = format("[Base] {0}", locBase->name);
+		text = format(tr("[Base] {0}"), locBase->name);
 	}
-	menuform->findControlTyped<Label>("LOCATION")->setText(format("LOCATION: {0}", text));
+	menuform->findControlTyped<Label>("LOCATION")->setText(format(tr("LOCATION: {0}"), text));
 }
 
 void Skirmish::battleInBuilding(bool hotseat, StateRef<Base> playerBase,

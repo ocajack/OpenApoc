@@ -27,43 +27,46 @@ void BribeScreen::updateInfo()
 {
 	UString relationship;
 	UString offer;
+	UString attitude;
 	bribe = organisation->costOfBribeBy(*state, state->getPlayer());
 
 	switch (organisation->isRelatedTo(state->getPlayer()))
 	{
 		case Organisation::Relation::Allied:
-			relationship = format(tr("{0}: allied with: X-COM"), organisation->name);
+			attitude = tr("ALLIED");
 			offer =
 			    tr("X-COM is ALLIED with this organization. The relationship cannot be improved.");
 			bribe = 0;
 			break;
 
 		case Organisation::Relation::Friendly:
-			relationship = format(tr("{0}: friendly with: X-COM"), organisation->name);
+			attitude = tr("FRIENDLY");
 			offer = getOfferString(bribe, tr("ALLIED"));
 			break;
 
 		case Organisation::Relation::Neutral:
-			relationship = format(tr("{0}: neutral towards: X-COM"), organisation->name);
+			attitude = tr("NEUTRAL");
 			offer = getOfferString(bribe, tr("FRIENDLY"));
 			break;
 
 		case Organisation::Relation::Unfriendly:
-			relationship = format(tr("{0}: unfriendly towards: X-COM"), organisation->name);
+			attitude = tr("UNFRIENDLY");
 			offer = getOfferString(bribe, tr("NEUTRAL"));
 			break;
 
 		case Organisation::Relation::Hostile:
-			relationship = format(tr("{0}: hostile towards: X-COM"), organisation->name);
+			attitude = tr("HOSTILE");
 			offer = getOfferString(bribe, tr("UNFRIENDLY"));
 			break;
 
 		default:
-			relationship = format(tr("{0}: Attitude unknown towards: X-COM"), organisation->name);
+			attitude = tr("Attitude unknown");
 			offer = "Unconventional relations";
 			bribe = 0;
 			LogError(offer);
 	}
+
+	relationship = format(tr("{0}: {1}"), tr(organisation->name), attitude);
 
 	if (organisation->takenOver)
 	{

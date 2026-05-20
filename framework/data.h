@@ -42,10 +42,9 @@ class Data
 	virtual void addPaletteAlias(const UString &name, const UString &value) = 0;
 	virtual void addVoxelSliceAlias(const UString &name, const UString &value) = 0;
 
-	virtual sp<PaletteImage> getFontStringCacheEntry(const UString &font_name,
-	                                                 const UString &text) = 0;
+	virtual sp<Image> getFontStringCacheEntry(const UString &font_name, const UString &text) = 0;
 	virtual void putFontStringCacheEntry(const UString &font_name, const UString &text,
-	                                     sp<PaletteImage> &img) = 0;
+	                                     sp<Image> img) = 0;
 
 	virtual bool writeImage(UString systemPath, sp<Image> image, sp<Palette> palette = nullptr) = 0;
 };

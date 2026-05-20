@@ -3151,21 +3151,22 @@ void CityView::update()
 			switch (selectedOrg->isRelatedTo(state->getPlayer()))
 			{
 				case Organisation::Relation::Allied:
-					relation = format(tr("allied with: {0}"), state->getPlayer()->name);
+					relation += tr(": allied with:");
 					break;
 				case Organisation::Relation::Friendly:
-					relation = format(tr("friendly with: {0}"), state->getPlayer()->name);
+					relation += tr(": friendly with:");
 					break;
 				case Organisation::Relation::Neutral:
-					relation = format(tr("neutral towards: {0}"), state->getPlayer()->name);
+					relation += tr(": neutral towards:");
 					break;
 				case Organisation::Relation::Unfriendly:
-					relation = format(tr("unfriendly towards: {0}"), state->getPlayer()->name);
+					relation += tr(": unfriendly towards:");
 					break;
 				case Organisation::Relation::Hostile:
-					relation = format(tr("hostile towards: {0}"), state->getPlayer()->name);
+					relation += tr(": hostile towards:");
 					break;
 			}
+			relation += UString(" ") + tr(state->getPlayer()->name);
 			uiTabs[7]->findControlTyped<Label>("TEXT_ORG_RELATION")->setText(relation);
 		}
 		else
@@ -4070,7 +4071,7 @@ bool CityView::handleGameStateEvent(Event *e)
 			    {StageCmd::Command::PUSH,
 			     mksp<NotificationScreen>(
 			         state, *this,
-			         format("Aliens have taken over {0}", gameOrgEvent->organisation->name),
+			         format(tr("Aliens have taken over {0}"), tr(gameOrgEvent->organisation->name)),
 			         gameEvent->type)});
 		}
 		break;
@@ -4246,7 +4247,7 @@ bool CityView::handleGameStateEvent(Event *e)
 			    tr("RESEARCH COMPLETE"),
 			    format(tr("Research project completed: {0}\nDo you wish to view the UFOpaedia "
 			              "report?"),
-			           ev->topic->name),
+			           tr(ev->topic->name)),
 			    MessageBox::ButtonOptions::YesNo,
 			    // "Yes" callback
 			    [game_state, lab_facility, ufopaedia_category, ufopaedia_entry]()
@@ -4318,7 +4319,7 @@ bool CityView::handleGameStateEvent(Event *e)
 			setUpdateSpeed(CityUpdateSpeed::Pause);
 			auto message_box = mksp<MessageBox>(
 			    tr("MANUFACTURE COMPLETED"),
-			    format("{0}\n{1}\n{2} {3}\n{4}", lab_base->name, item_name, tr("Quantity:"),
+			    format("{0}\n{1}\n{2} {3}\n{4}", tr(lab_base->name), tr(item_name), tr("Quantity:"),
 			           ev->goal, tr("Do you wish to reasign the Workshop?")),
 			    MessageBox::ButtonOptions::YesNo,
 			    // Yes callback
@@ -4394,10 +4395,10 @@ bool CityView::handleGameStateEvent(Event *e)
 				return true;
 			}
 			setUpdateSpeed(CityUpdateSpeed::Pause);
-			auto message_box =
-			    mksp<MessageBox>(tr("FACILITY COMPLETED"),
-			                     format("{0}\n{1}", ev->base->name, ev->facility->type->name),
-			                     MessageBox::ButtonOptions::Ok);
+			auto message_box = mksp<MessageBox>(
+			    tr("FACILITY COMPLETED"),
+			    format("{0}\n{1}", tr(ev->base->name), tr(ev->facility->type->name)),
+			    MessageBox::ButtonOptions::Ok);
 			fw().stageQueueCommand({StageCmd::Command::PUSH, message_box});
 		}
 		break;

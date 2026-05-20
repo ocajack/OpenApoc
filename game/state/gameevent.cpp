@@ -87,35 +87,35 @@ UString GameVehicleEvent::message()
 		case GameEventType::UfoSpotted:
 			return tr("UFO spotted.");
 		case GameEventType::UfoCrashed:
-			return format(tr("UFO crash landed: {0}"), vehicle->name);
+			return format(tr("UFO crash landed: {0}"), tr(vehicle->name));
 		case GameEventType::UfoRecoveryUnmanned:
-			return format(tr("Unmanned UFO recovered: {0}"), vehicle->name);
+			return format(tr("Unmanned UFO recovered: {0}"), tr(vehicle->name));
 		case GameEventType::VehicleRecovered:
-			return format(tr("Vehicle successfully recovered: {0}"), vehicle->name);
+			return format(tr("Vehicle successfully recovered: {0}"), tr(vehicle->name));
 		case GameEventType::VehicleNoFuel:
-			return format(tr("Vehicle out of fuel: {0}"), vehicle->name);
+			return format(tr("Vehicle out of fuel: {0}"), tr(vehicle->name));
 		case GameEventType::UfoRecoveryBegin:
 			return "";
 		case GameEventType::VehicleLightDamage:
-			return format(tr("Vehicle lightly damaged: {0}"), vehicle->name);
+			return format(tr("Vehicle lightly damaged: {0}"), tr(vehicle->name));
 		case GameEventType::VehicleModerateDamage:
-			return format(tr("Vehicle moderately damaged: {0}"), vehicle->name);
+			return format(tr("Vehicle moderately damaged: {0}"), tr(vehicle->name));
 		case GameEventType::VehicleHeavyDamage:
-			return format(tr("Vehicle heavily damaged: {0}"), vehicle->name);
+			return format(tr("Vehicle heavily damaged: {0}"), tr(vehicle->name));
 		case GameEventType::VehicleEscaping:
-			return format(tr("Vehicle returning to base as damaged: {0}"), vehicle->name);
+			return format(tr("Vehicle returning to base as damaged: {0}"), tr(vehicle->name));
 		case GameEventType::VehicleNoAmmo:
-			return format(tr("{0}: Weapon out of ammo"), vehicle->name);
+			return format(tr("{0}: Weapon out of ammo"), tr(vehicle->name));
 		case GameEventType::VehicleLowFuel:
-			return format(tr("Vehicle low on fuel: {0}"), vehicle->name);
+			return format(tr("Vehicle low on fuel: {0}"), tr(vehicle->name));
 		case GameEventType::VehicleRepaired:
-			return format(tr("Vehicle repaired: {0}"), vehicle->name);
+			return format(tr("Vehicle repaired: {0}"), tr(vehicle->name));
 		case GameEventType::VehicleRearmed:
-			return format(tr("Vehicle rearmed: {0}"), vehicle->name);
+			return format(tr("Vehicle rearmed: {0}"), tr(vehicle->name));
 		case GameEventType::VehicleRefuelled:
-			return format(tr("Vehicle refuelled: {0}"), vehicle->name);
+			return format(tr("Vehicle refuelled: {0}"), tr(vehicle->name));
 		case GameEventType::VehicleNoEngine:
-			return format(tr("Vehicle has no engine: {0}"), vehicle->name);
+			return format(tr("Vehicle has no engine: {0}"), tr(vehicle->name));
 		case GameEventType::UnauthorizedVehicle:
 			if (vehicle->type->isGround())
 			{
@@ -126,13 +126,13 @@ UString GameVehicleEvent::message()
 				return tr("An illegal flyer has been detected.");
 			}
 		case GameEventType::NotEnoughAmmo:
-			return format(tr("Not enough ammo to rearm vehicle: {0}"), vehicle->name);
+			return format(tr("Not enough ammo to rearm vehicle: {0}"), tr(vehicle->name));
 		case GameEventType::NotEnoughFuel:
-			return format(tr("Not enough fuel to refuel vehicle: {0}"), vehicle->name);
+			return format(tr("Not enough fuel to refuel vehicle: {0}"), tr(vehicle->name));
 		case GameEventType::VehicleWithAlienLootInBaseWithNoContainment:
 			return format(
 			    tr("Vehicle landed with alien loot in base with no alien containment: {0}"),
-			    vehicle->name);
+			    tr(vehicle->name));
 		default:
 			LogError("Invalid vehicle event type");
 			break;
@@ -142,6 +142,13 @@ UString GameVehicleEvent::message()
 
 UString GameAgentEvent::message()
 {
+	// Ensure agent is valid before accessing it (may have been removed by the time event is processed)
+	if (!agent)
+	{
+		LogWarning("GameAgentEvent::message() called with invalid agent reference for type {0}",
+		           (int)type);
+		return "";
+	}
 	switch (type)
 	{
 		case GameEventType::AgentArrived:

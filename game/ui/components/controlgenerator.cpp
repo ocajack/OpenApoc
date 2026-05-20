@@ -308,7 +308,7 @@ sp<Control> ControlGenerator::createVehicleAssignmentControl(GameState &state, s
 	icon->Size = {iconLenght, controlHeight};
 	icon->setParent(control);
 
-	auto nameLabel = control->createChild<Label>(vehicle->name, singleton.labelFont);
+	auto nameLabel = control->createChild<Label>(tr(vehicle->name), singleton.labelFont);
 	nameLabel->Size = {controlLength - iconLenght, singleton.labelFont->getFontHeight()};
 	nameLabel->Location = {iconLenght, (control->Size.y - nameLabel->Size.y) / 2};
 
@@ -716,7 +716,7 @@ sp<Control> ControlGenerator::createOrganisationControl(GameState &state,
 	orgIcon->AutoSize = true;
 	orgIcon->Location = {1, 1};
 	orgIcon->Name = "ORG_ICON_" + info.organisation->name;
-	orgIcon->ToolTipText = info.organisation->name;
+	orgIcon->ToolTipText = tr(info.organisation->name);
 
 	return baseControl;
 }

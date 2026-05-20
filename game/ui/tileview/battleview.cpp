@@ -1453,9 +1453,9 @@ void BattleView::update()
 				fw().stageQueueCommand(
 				    {StageCmd::Command::PUSH,
 				     mksp<MessageBox>(
-				         "Next Turn",
-				         format("{0}, it is your turn!",
-				                state->current_battle->currentActiveOrganisation->name),
+				         tr("Next Turn"),
+				         format(tr("{0}, it is your turn!"),
+				                tr(state->current_battle->currentActiveOrganisation->name)),
 				         MessageBox::ButtonOptions::Ok,
 				         [this] {
 					         state->current_battle->currentPlayer =
