@@ -2690,15 +2690,15 @@ void CityView::update()
 				agentName->setText(agent->name);
 				if (agent->isAssignedToLab())
 				{
-					if (agent->lab_assigned->current_project)
+							if (agent->lab_assigned->current_project)
 					{
-						UString pr = agent->lab_assigned->current_project->name;
+						UString pr = tr(agent->lab_assigned->current_project->name);
 						int progress =
 						    (static_cast<float>(
 						         agent->lab_assigned->current_project->man_hours_progress) /
 						     agent->lab_assigned->current_project->man_hours) *
 						    100;
-						agentAssignment->setText(pr + format(" ({0}%)", progress));
+						agentAssignment->setText(pr + format(tr(" ({0}%)"), progress));
 					}
 					else
 						agentAssignment->setText(tr("No project assigned"));
@@ -2812,9 +2812,9 @@ void CityView::update()
 				agentName->setText(agent->name);
 				if (agent->isAssignedToLab())
 				{
-					if (agent->lab_assigned->current_project)
+						if (agent->lab_assigned->current_project)
 					{
-						UString pr = agent->lab_assigned->current_project->name;
+						UString pr = tr(agent->lab_assigned->current_project->name);
 						int progress = (static_cast<float>(
 						                    agent->lab_assigned->manufacture_man_hours_invested +
 						                    agent->lab_assigned->current_project->man_hours *
@@ -2822,7 +2822,7 @@ void CityView::update()
 						                (agent->lab_assigned->current_project->man_hours *
 						                 agent->lab_assigned->manufacture_goal)) *
 						               100;
-						agentAssignment->setText(pr + format(" ({0}%)", progress));
+						agentAssignment->setText(pr + format(tr(" ({0}%)"), progress));
 					}
 					else
 						agentAssignment->setText(tr("No project assigned"));
@@ -2934,17 +2934,17 @@ void CityView::update()
 			if (agent->type->role == AgentType::Role::Physicist)
 			{
 				agentName->setText(agent->name);
-				if (agent->isAssignedToLab())
+					if (agent->isAssignedToLab())
 				{
 					if (agent->lab_assigned->current_project)
 					{
-						UString pr = agent->lab_assigned->current_project->name;
+						UString pr = tr(agent->lab_assigned->current_project->name);
 						int progress =
 						    (static_cast<float>(
 						         agent->lab_assigned->current_project->man_hours_progress) /
 						     agent->lab_assigned->current_project->man_hours) *
 						    100;
-						agentAssignment->setText(pr + format(" ({0}%)", progress));
+						agentAssignment->setText(pr + format(tr(" ({0}%)"), progress));
 					}
 					else
 						agentAssignment->setText(tr("No project assigned"));

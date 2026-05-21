@@ -127,7 +127,7 @@ void SaveMenu::begin()
 				}
 				else
 				{
-					gameDayLabel->setText("Day " + std::to_string(gameTime.getDay()));
+			gameDayLabel->setText(format(tr("Day {0}"), gameTime.getDay()));
 				}
 			}
 			auto gameTimeLabel = newControl->findControlTyped<Label>("LABEL_INGAME_TIME");

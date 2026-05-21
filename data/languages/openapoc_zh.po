@@ -2904,6 +2904,9 @@ msgstr "取消采购与出售"
 msgid "Are you sure?"
 msgstr "是否确认？"
 
+msgid "Pay: $ {0}"
+msgstr "支付：$ {0}"
+
 msgid "Pay:"
 msgstr "支付："
 
@@ -10462,3 +10465,10 @@ msgstr "守卫"
 
 msgid "Civilians"
 msgstr "平民"
+
+msgid "Unsaved progress will be lost. Continue?"
+msgstr "未保存的进度将会丢失。是否继续？" 
+
+msgid "Day {0}"
+msgstr "天 {0}"
+
