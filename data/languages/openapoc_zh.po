@@ -10149,7 +10149,7 @@ msgid ""
 Do you wish to view the UFOpaedia report?"
 msgstr ""
 "研究项目完成：{0}
-是否查看UFOpaedia报告？"
+是否查看UFO百科报告？"
 
 #, c++-format
 msgid "{0}: Attitude unknown towards: X-COM"
@@ -10422,7 +10422,7 @@ msgid ""
 "Do you wish to view the UFOpaedia report?"
 msgstr ""
 "研究项目完成：{0}\n"
-"是否查看UFOpaedia报告？"
+"是否查看UFO百科报告？"
 
 #, c++-format
 msgid ""
