@@ -72,7 +72,7 @@ template <typename T> class StateRef
 		obj = T::get(*state, id);
 		if (!obj)
 		{
-			LogError("No {0} object matching ID \"{1}\" found", T::getTypeName(), id);
+			LogWarning("No {0} object matching ID \"{1}\" found", T::getTypeName(), id);
 		}
 	}
 
