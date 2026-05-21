@@ -25,6 +25,7 @@ std::list<UString> developerList = {
     u8"FranciscoDA / Flacko empty`void / Empty Void Jarskih - Jari Hanski",
     u8"Kurtsley - Brian Beard",
     u8"Atrosha - Panasenko Vasiliy Sergeevich",
+	u8"Jack.Y",
     u8"",
 };
 std::list<UString> otherGitList = {
@@ -87,7 +88,7 @@ std::list<UString> reversingList = {
     u8"",
 };
 std::list<UString> translationList = {
-    u8"5thAvenue", u8"Blackwolf - Kuzoku", u8"Skin36", u8"SolariusScorch", u8"Xracer", "",
+    u8"5thAvenue", u8"Blackwolf - Kuzoku", u8"Skin36", u8"SolariusScorch", u8"Xracer","Jack.Y","",
 };
 } // namespace
 
