@@ -1818,7 +1818,13 @@ void AEquipScreen::closeScreen()
 	if (!selectedAgents.empty() && state->current_battle)
 	{
 		auto currentAgent = selectedAgents.front();
-		if (currentAgent != firstAgent && selectedAgents.front()->unit->tileObject)
+
+		if (!currentAgent)
+		{
+			LogWarning("Selected agent is null in AEquipScreen, skipping battle selection update");
+		}
+		else if (currentAgent != firstAgent && currentAgent->unit &&
+		         currentAgent->unit->tileObject)
 		{
 			auto pos =
 			    std::find(state->current_battle->battleViewSelectedUnits.begin(),
@@ -1852,6 +1858,13 @@ bool AEquipScreen::isInVicinity(sp<Agent> agent)
 		return true;
 	}
 	auto currentAgent = selectedAgents.front();
+
+	if (!currentAgent)
+	{
+		LogWarning("Current agent is null in AEquipScreen::isInVicinity, defaulting to true");
+		return true;
+	}
+
 	switch (getMode())
 	{
 		case Mode::Enemy:

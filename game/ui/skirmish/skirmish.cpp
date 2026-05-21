@@ -555,6 +555,12 @@ void Skirmish::goToBattle(bool customAliens, std::map<StateRef<AgentType>, int> 
 	sp<Agent> firstAgent;
 	for (auto &a : state.agents)
 	{
+		if (!a.second)
+		{
+			LogWarning("Encountered null agent in skirmish agents map, skipping");
+			continue;
+		}
+
 		if (a.second->homeBuilding.id == "BUILDING_SKIRMISH")
 		{
 			firstAgent = a.second;

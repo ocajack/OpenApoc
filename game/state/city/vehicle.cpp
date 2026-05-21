@@ -1781,6 +1781,12 @@ StateRef<Building> Vehicle::getServiceDestination(GameState &state)
 	std::list<StateRef<Agent>> agentsToRemove;
 	for (auto a : currentAgents)
 	{
+		if (!a)
+		{
+			LogWarning("Encountered null agent in vehicle currentAgents, skipping");
+			continue;
+		}
+
 		// Remove agents if wounded and this is their home base
 		if (a->modified_stats.health < a->current_stats.health &&
 		    a->homeBuilding == currentBuilding)

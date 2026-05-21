@@ -2876,6 +2876,12 @@ void Battle::finishBattle(GameState &state)
 	std::map<Rank, int> countRanks;
 	for (auto &a : state.agents)
 	{
+		if (!a.second)
+		{
+			LogWarning("Encountered null agent in battle agents map during rank counting, skipping");
+			continue;
+		}
+
 		if (!a.second->type->allowsDirectControl ||
 		    a.second->type->role != AgentType::Role::Soldier)
 		{
@@ -2962,6 +2968,12 @@ void Battle::exitBattle(GameState &state)
 		// Erase agents
 		for (auto &a : state.agents)
 		{
+			if (!a.second)
+			{
+				LogWarning("Encountered null agent in battle agents map during skirmish cleanup, skipping");
+				continue;
+			}
+
 			if (!a.second->city)
 			{
 				if (a.second->currentBuilding)

@@ -2595,6 +2595,13 @@ void CityView::update()
 		for (auto &a : state->agents)
 		{
 			auto agent = a.second;
+
+			if (!agent)
+			{
+				LogWarning("Encountered null agent in agents map, skipping");
+				continue;
+			}
+
 			if (agent->owner != state->getPlayer() || agent->isDead() ||
 			    agent->type->role != AgentType::Role::Soldier)
 			{
@@ -2720,6 +2727,13 @@ void CityView::update()
 		for (auto &a : state->agents)
 		{
 			auto agent = a.second;
+
+			if (!agent)
+			{
+				LogWarning("Encountered null agent in agents map, skipping");
+				continue;
+			}
+
 			if (agent->owner != state->getPlayer() || agent->isDead() ||
 			    agent->type->role != AgentType::Role::BioChemist)
 			{
@@ -2837,6 +2851,13 @@ void CityView::update()
 		for (auto &a : state->agents)
 		{
 			auto agent = a.second;
+
+			if (!agent)
+			{
+				LogWarning("Encountered null agent in agents map, skipping");
+				continue;
+			}
+
 			if (agent->owner != state->getPlayer() || agent->isDead() ||
 			    agent->type->role != AgentType::Role::Engineer)
 			{
@@ -2952,6 +2973,13 @@ void CityView::update()
 		for (auto &a : state->agents)
 		{
 			auto agent = a.second;
+
+			if (!agent)
+			{
+				LogWarning("Encountered null agent in agents map, skipping");
+				continue;
+			}
+
 			if (agent->owner != state->getPlayer() || agent->isDead() ||
 			    agent->type->role != AgentType::Role::Physicist)
 			{
@@ -4180,7 +4208,7 @@ bool CityView::handleGameStateEvent(Event *e)
 			UString title = tr("Commence investigation");
 			UString message = format(tr("All selected units and crafts have arrived at {0}. "
 			                            "Proceed with investigation? ({1} units)"),
-			                         building->name, agents.size());
+			                         tr(building->name), agents.size());
 			fw().stageQueueCommand({StageCmd::Command::PUSH,
 			                        mksp<MessageBox>(
 			                            title, message, MessageBox::ButtonOptions::YesNo,

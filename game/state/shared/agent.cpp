@@ -28,7 +28,29 @@ template <> sp<Agent> StateObject<Agent>::get(const GameState &state, const UStr
 	auto it = state.agents.find(id);
 	if (it == state.agents.end())
 	{
-		LogError("No agent matching ID \"{0}\"", id);
+		LogWarning("No agent matching ID \"{0}\" (total agents: {1}, ID prefix: AGENT_)", id,
+		           state.agents.size());
+
+		if (state.agents.empty())
+		{
+			LogWarning("Agent map is completely empty - possible initialization issue");
+		}
+		else
+		{
+			UString minId = state.agents.begin()->first;
+			UString maxId = state.agents.rbegin()->first;
+			LogWarning("Available agent IDs range from {0} to {1}", minId, maxId);
+
+			bool inDeathNote = state.agentsDeathNote.find(id) != state.agentsDeathNote.end();
+			if (inDeathNote)
+			{
+				LogWarning(
+				    "Agent {0} is in death note queue - it was recently destroyed and pending "
+				    "cleanup",
+				    id);
+			}
+		}
+
 		return nullptr;
 	}
 	return it->second;
