@@ -9617,6 +9617,9 @@ msgstr "为非 X-COM 载具添加前缀"
 msgid "Aliens have taken over %s"
 msgstr "外星势力已占领%s区域"
 
+msgid "Aliens have taken over {0}"
+msgstr "外星势力已占领{0}区域"
+
 #
 msgid "All selected units and crafts have arrived at %s. Proceed with investigation? (%d units)"
 msgstr "所有选定单位和飞行器已抵达 %s. 开始调查？（%d 个单位）"
