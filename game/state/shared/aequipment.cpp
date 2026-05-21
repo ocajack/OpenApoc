@@ -771,10 +771,11 @@ void AEquipment::fire(GameState &state, Vec3<float> targetPosition, StateRef<Bat
 		float velocityZ = 0.0f;
 		if (!getVelocityForLaunch(*unit, targetPosition, velocityXY, velocityZ))
 		{
-			LogError("Firing a launcher with no valid trajectory?");
+			LogInfo("Launcher fire aborted: no valid trajectory to target ({0:.2f}, {1:.2f}, {2:.2f}). "
+			        "Possible reasons: target too far, obstructed path, or insufficient strength",
+			        targetPosition.x, targetPosition.y, targetPosition.z);
 			return;
 		}
-		// Throw item (accuracy applied inside)
 
 		for (int shot_number = 0; shot_number < number_of_shots; shot_number++)
 		{

@@ -2497,23 +2497,26 @@ void BattleUnit::updateIdling(GameState &state)
 
 	if (missions.empty() && isConscious())
 	{
-		// Sanity checks
+
 		if (goalFacing != facing)
 		{
-			LogError("Unit {0} ({1}) turning without a mission, wtf?", id, agent->type->id);
-		}
-		if (target_body_state != current_body_state)
-		{
-			LogError("Unit {0} ({1}) changing body state without a mission, wtf?", id,
-			         agent->type->id);
+			LogWarning("Unit {0} ({1}) facing inconsistency detected (goal={2}, actual={3}), "
+			           "auto-correcting",
+			           id, agent->type->id, goalFacing, facing);
+			goalFacing = facing;
 		}
 
-		// Reach goal before everything else
+		if (target_body_state != current_body_state)
+		{
+			LogWarning("Unit {0} ({1}) body state inconsistency detected "
+			           "(target={2}, current={3}), auto-correcting. "
+			           "This can happen with special units like Brainsuckers.",
+			           id, agent->type->id, (int)target_body_state, (int)current_body_state);
+			target_body_state = current_body_state;
+		}
+
 		if (!atGoal)
 		{
-			// The only way unit can suddenly become not at goal when idling is if either
-			// map part died under him, or dirt fell from above on him
-			// Either way, moving to goal is not the correct way to solve this
 			startFalling(state);
 		}
 		else if (realTime || (state.current_battle->interruptQueue.empty() &&
@@ -3838,8 +3841,12 @@ void BattleUnit::triggerBrainsuckers(GameState &state)
 					fw().soundBackend->playSample(state.battle_common_sample_list->brainsuckerHatch,
 					                              position);
 				}
+
 				state.current_battle->spawnUnit(state, aliens, {&state, "AGENTTYPE_BRAINSUCKER"},
-				                                i->position, {0, 1}, BodyState::Throwing);
+				                                i->position, {0, 1},
+				                                BodyState::Throwing,
+				                                BodyState::Throwing);
+
 				i->die(state, false);
 				state.current_battle->checkMissionEnd(state, false, true);
 			}

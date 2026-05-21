@@ -276,13 +276,24 @@ void BattleItem::update(GameState &state, unsigned int ticks)
 			newPosition.y = glm::clamp(newPosition.y, 0.0f, mapSize.y - 0.01f);
 			newPosition.z = glm::clamp(newPosition.z, 0.0f, mapSize.z - 0.01f);
 		}
-		// Fell below 0???
+
+		float minHeight = 0.01f;
+		if (previousPosition.z >= minHeight && newPosition.z < minHeight)
+		{
+			collision = true;
+			newPosition.z = minHeight;
+			velocity = {0, 0, 0};
+		}
+
 		if (newPosition.z < 0)
 		{
-			LogError("Item at {0} {1} fell off the end of the world!?", newPosition.x,
-			         newPosition.y);
-			die(state, false);
-			return;
+			LogWarning("Item at ({0}, {1}) fell below ground (z={2}), "
+			           "clamping to surface and stopping",
+			           newPosition.x, newPosition.y, newPosition.z);
+
+			newPosition.z = minHeight;
+			velocity = {0, 0, 0};
+			collision = true;
 		}
 		setPosition(newPosition);
 	}
