@@ -1497,6 +1497,9 @@ msgstr "雾都孤儿街区"
 msgid "Campesino Apartments"
 msgstr "坎佩西诺公寓"
 
+msgid "GreyVisitor Towers"
+msgstr "灰访客塔楼"
+
 msgid "Grey Visitor Towers"
 msgstr "灰访客塔楼"
 
@@ -3369,6 +3372,10 @@ msgstr "喷吐者解剖报告"
 msgid "Spitter"
 msgstr "喷吐者"
 
+msgid "Spitters"
+msgstr "喷吐者"
+
+
 msgid "Megaspawn Autopsy"
 msgstr "巨殖体解剖报告"
 
@@ -4944,8 +4951,15 @@ msgstr "此项目需高级实验室或车间。"
 msgid "Supplier:"
 msgstr "供应商："
 
+msgid "Transferred goods have arrived: {0}"
+msgstr "转移货物已送达：{0}"
+
+
 msgid "Transferred goods have arrived:"
 msgstr "转移货物已送达："
+
+msgid "Items from tactical combat zone have arrived: {0}"
+msgstr "战术作战区物品已送达：{0}"
 
 msgid "Items from tactical combat zone have arrived:"
 msgstr "战术作战区物品已送达："
@@ -9572,352 +9586,879 @@ msgstr "战斗评级"
 msgid "Unit Brainsucked"
 msgstr "单位被脑吸"
 
-#++++++++++
+#
 msgid "(MOD) Griffon becomes All-Terrain"
 msgstr "(MOD) 狮鹫装甲战车变为全地形"
 
-#++++++++++
+#
 msgid "(MOD) Invulnerable roads"
 msgstr "(MOD) 不可摧毁的道路"
 
-#++++++++++
+#
 msgid "(MOD) Original Brainsucker Launcher SFX"
 msgstr "(MOD) 原版脑吸虫发射特效"
 
-#++++++++++
+#
 msgid "(MOD) Wolfhound APC becomes All-Terrain"
 msgstr "(MOD) 狼犬装甲运兵车变为全地形"
 
-#++++++++++
+#
 msgid "A lightweight armour developed by X-COM using Alien disruption field technology. This offers superb protection and excellent mobility."
 msgstr "X-COM采用外星瓦解场技术研发的轻质护甲, 防护与机动性俱佳. "
 
-#++++++++++
+#
 msgid "Add prefix to non-X-COM vehicles"
 msgstr "为非 X-COM 载具添加前缀"
 
-#++++++++++
+#
 msgid "Aliens have taken over %s"
 msgstr "外星势力已占领%s区域"
 
-#++++++++++
+#
 msgid "All selected units and crafts have arrived at %s. Proceed with investigation? (%d units)"
 msgstr "所有选定单位和飞行器已抵达 %s. 开始调查？（%d 个单位）"
 
-#++++++++++
+#, c++-format
+msgid "All selected units and crafts have arrived at {0}. Proceed with investigation? ({1} units)"
+msgstr "所有选定单位和载具已抵达{0}。是否开始调查？（{1}单位）"
+
+#
 msgid "All units run and kneel by default"
 msgstr "所有单位默认跑步并采取蹲伏姿势"
 
-#++++++++++
+#
 msgid "Allow All Terrain Vehicles (ATV) to initiate UFO recovery missions"
 msgstr "允许全地形车辆（ATV）启动 UFO 恢复任务"
 
-#++++++++++
+#
 msgid "Allow attacking owned vehicles"
 msgstr "允许攻击己方载具"
 
-#++++++++++
+#
 msgid "Allow force-firing parallel to the ground"
 msgstr "允许强制开火平行于地面"
 
-#++++++++++
+#
 msgid "Allow loot to be stashed in the building"
 msgstr "允许将战利品存放在建筑内"
 
-#++++++++++
+#
 msgid "Allow manual ferrying of cargo and non-combatants"
 msgstr "允许手动运输货物和非战斗人员"
 
-#++++++++++
+#
 msgid "Allow manual use of teleporters in city"
 msgstr "允许在城市中手动使用传送器"
 
-#++++++++++
+#
 msgid "Allow nearby vehicles to pick up loot"
 msgstr "允许附近载具拾取战利品"
 
-#++++++++++
+#
 msgid "Allow soldiers to call taxi"
 msgstr "允许士兵叫出租车"
 
-#++++++++++
+#
 msgid "Allow unloading clips and quick equip"
 msgstr "允许卸下弹匣并快速装备"
 
-#++++++++++
+#
 msgid "Ammunition explodes when blown up"
 msgstr "弹药被引爆时发生爆炸"
 
-#++++++++++
+#
 msgid "Any hit on hostile building provokes retaliation"
 msgstr "攻击敌方建筑将引发反击"
 
-#++++++++++
+#
 msgid "Armored roads"
 msgstr "装甲道路"
 
-#++++++++++
+#
 msgid "Attempt to recover agent equipment dropped in city"
 msgstr "尝试回收特工遗落于城市中的装备"
 
-#++++++++++
+#
 msgid "Automatically reload weapons when empty"
 msgstr "武器弹药耗尽时自动重新装填"
 
-#++++++++++
+#
 msgid "Call existing transport instead of spawning them"
 msgstr "优先使用已有载具而非生成新载具"
 
-#++++++++++
+#
 msgid "Click left mouse mouse button or press a key when done"
 msgstr "完成后点击鼠标左键或按任意键"
 
-#++++++++++
-#cityview.cpp:4225
+#
+#: cityview.cpp:4225
 msgid "Commence investigation"
 msgstr "开始调查"
 
-#++++++++++
+#
 msgid "Construction Vehicles will repair a maximum of X Tiles per night"
 msgstr "工程车辆每晚最多修复 X 块方格"
 
-#++++++++++
-#ufopaedia.xml:1957
+#
+#: ufopaedia.xml:1957
 msgid "Cult Of Sirius"
 msgstr "天狼星教派"
 
-#++++++++++
+#
 msgid "Days In Service"
 msgstr "服役天数"
 
-#++++++++++
+#
 msgid "Determines the percentage of the original Price ORGs have to pay for a Scenery Tile to be repaired"
 msgstr "确定 ORGs 修复景观方格所需支付的原始价格百分比"
 
-#++++++++++
+#
 msgid "Display additional unit icons (fatal, psi)"
 msgstr "显示额外的单位图标（致命、心灵）"
 
-#++++++++++
+#
 msgid "Display unit paths in battle"
 msgstr "战斗中显示单位移动路径"
 
-#++++++++++
+#
 msgid "Don't follow vehicles in strategy view"
 msgstr "在战略视图中不要跟随载具"
 
-#++++++++++
+#
 msgid "Enable agent equipment templates"
 msgstr "启用特工装备配置模板"
 
-#++++++++++
+#
 msgid "Enforce vehicle cargo limits"
 msgstr "强制执行载具货物限制"
 
-#++++++++++
+#
 msgid "Explosions damage instantly"
 msgstr "爆炸瞬间造成伤害"
 
-#++++++++++
+#
 msgid "Gravlift sounds"
 msgstr "反重力装置音效"
 
-#++++++++++
+#
 msgid "Hitting vehicle shield produces alternate sound"
 msgstr "攻击车辆护盾触发替代音效"
 
-#++++++++++
+#
 msgid "Improved city control scheme"
 msgstr "改进的城市控制方案"
 
-#++++++++++
+#
 msgid "Infinite ammo for X-Com agents and vehicles"
 msgstr "X-COM 人员和载具无限弹药"
 
-#++++++++++
+#
 msgid "Initiating raid hurts relationships"
 msgstr "发动突袭会损害关系"
 
-#++++++++++
+#
 msgid "Left clicking icon opens equip menu"
 msgstr "左键点击图标打开装备菜单"
 
-#++++++++++
-#ufopaedia.xml:1492
+#
+#: ufopaedia.xml:1492
 msgid "Marsec Armour"
 msgstr "马尔斯护甲"
 
-#++++++++++
+#
 msgid "Max Samples"
 msgstr "最大样本"
 
-#++++++++++
+#
 msgid "Module lost during recovery:"
 msgstr "回收过程中丢失模组:"
 
-#++++++++++
+#
 msgid "Mousewheel changes vertical level in battlescape"
 msgstr "鼠标滚轮在战斗地形中调整垂直高度"
 
-#++++++++++
+#
 msgid "Multiplier for agent stat growth"
 msgstr "干员属性成长倍率"
 
-#++++++++++
+#
 msgid "Multiplier for damage inflicted by X-com"
 msgstr "X-COM 造成的伤害倍率"
 
-#++++++++++
+#
 msgid "Multiplier for damage received by X-com"
 msgstr "X-COM 受到的伤害倍率"
 
-#++++++++++
+#
 msgid "Multiplier for number of hostiles"
 msgstr "敌方数量倍率"
 
-#++++++++++
+#
 msgid "Overspawn Autopsy 1"
 msgstr "超殖体解剖 1"
 
-#++++++++++
+#
 msgid "Put market stock on the right side"
 msgstr "将市场库存放在右侧"
 
-#++++++++++
+#
 msgid "Require LOS to maintain psi attack"
 msgstr "维持心灵攻击需要视线"
 
-#++++++++++
+#
 msgid "Seed RNG on game start"
 msgstr "游戏启动时初始化随机数生成器"
 
-#++++++++++
+#
 msgid "Select squad with single click"
 msgstr "单击选择小队"
 
-#++++++++++
+#
 msgid "Show vehicles in current dimension (or entering / leaving)"
 msgstr "显示当前维度中的载具（或进入/离开时）"
 
-#++++++++++
+#
 msgid "Skip turbo movement calculations"
 msgstr "跳过涡轮移动计算"
 
-#++++++++++
+#
 msgid "Storage"
 msgstr "存储空间"
 
-#++++++++++
+#
 msgid "Stunning hurts relationships"
 msgstr "使敌人昏迷会损害关系"
 
-#++++++++++
+#
 msgid "Successful raid collapses building"
 msgstr "成功突袭将导致建筑物倒塌"
 
-#++++++++++
+#
 msgid "The Alien Bomber is equipped with an unusual missile launcher which fires a missile that splits into multiple, independently targeted missiles. It also has a light beam weapon to deal with close air combat. There is a limited crew on board."
 msgstr "外星轰炸机搭载可分导多弹头导弹发射器及近战用轻型光束武器, 乘员数量有限. "
 
-#++++++++++
+#
 msgid "Throwing requires proper facing and pose"
 msgstr "投掷需正确朝向与姿势"
 
-#++++++++++
+#
 msgid "Transtellar checks relationship when buying items"
 msgstr "星际运输公司在购买商品时检查关系"
 
-#++++++++++
+#
 msgid "Uncapable vehicles crash when entering gates (Weapons and Modules may be lost in crash)"
 msgstr "无法通过的载具在进入大门时会坠毁（坠毁可能导致武器与模块丢失）"
 
-#++++++++++
+#
 msgid "Unsupported ground vehicles crash (Weapons and Modules may be lost in crash)"
 msgstr "未受支持的地面载具将坠毁(坠毁可能导致武器与模块丢失)"
 
-#++++++++++
+#
 msgid "Vehicles crash on low HP (Weapons and Modules may be lost in crash)"
 msgstr "载具在低血量时会坠毁（坠毁可能导致武器与模块丢失）"
 
-#++++++++++
+#
 msgid "Vehicles crash when out of fuel (Weapons and Modules may be lost in crash)"
 msgstr "载具在燃料耗尽时会坠毁（坠毁可能导致武器与模块丢失）"
 
-#++++++++++
+#
 msgid "Weapons autoreload only same ammo type"
 msgstr "武器自动重新装填仅限相同类型的弹药"
 
 
-#++++++++++
+#
 msgid "X-Com 1 Damage model (0-200%)"
 msgstr "XCOM 1伤害模型(0-200%)"
 
-#++++++++++
+#
 msgid "You must research this weapon and its ammo before you can use it"
 msgstr "使用该武器及弹药前需完成相关研究"
 
-#++++++++++
-#ufopaedia.xml:2359
+#
+#: ufopaedia.xml:2359
 msgid "The Alien city is a complex organic growth in which each building type functions as a highly specialized organ. The Megapod Chamber is the reproduction organ of the Alien city which nutures numerous egg shaped structures. These Megapods are giant seeds which grow to a large size before being transported to a new location. The seeds then grow and develop into other Alien buildings. The Megapod Chamber is extremely well defended but once it is destroyed we will be close to victory."
 msgstr "异形城市是复杂有机聚落，每类建筑如同特化\"器官\"。巨荚腔是繁殖器官，培育大量卵形结构——这些巨荚作为巨型种子在运往新地点后发育成其他异形建筑。巨荚腔防御森严，摧毁它即接近胜利。"
 
-#++++++++++
-#ufopaedia.xml:74
+#
+#: ufopaedia.xml:74
 msgid "The pod has a hard and extremely tough skin, this peels back in the presence of human beings. A creature popularly referred to as a Brainsucker then emerges fully formed and active. Our conclusion is that these pods are a genetically engineered device designed to attack only human life forms."
 msgstr "该荚体外壳坚硬异常，遇人类即裂开，释放俗称\"吸脑怪\"的成熟活性生物。结论表明，这些荚体是基因工程产物，专为攻击人类设计。"
 
-#++++++++++
-#ufopaedia.xml:2389
+#
+#: ufopaedia.xml:2389
 msgid "This building produces strange organic mushroooms which grow into Alien craft. All other Alien technology is produced here as well - weapons for craft and equipment for Alien warriors. The nature of this building makes it an essential target for our forces, even though it is very well defended."
 msgstr "该建筑生产可\"生长\"成异形飞船的有机菌菇，同时制造所有异形科技——飞船武器与战士装备。其战略重要性使其成为关键目标，尽管防御严密。"
 
-#++++++++++
-#ufopaedia.xml:224
+#
+#: ufopaedia.xml:224
 msgid "This creature is a rapacious carnivore whose feeding frenzy contributes to the rapid growth of younger lifeforms called Hyperworms which are reared inside its body. The gestation period for the Hyperworms is about three days and each Multiworm gives birth to four offspring. The birth process is lethal for the parent - the Hyperworms explode from the Multiworms body and consume it within a matter of seconds. The brain structure of the Multiworm is undeveloped and it is unlikely to be affected by Psionic attacks. The tissue analysis from the autopsy will provide an invaluable contribution to our biological warfare research."
 msgstr "该贪婪肉食生物通过疯狂进食促进体内\"超蠕虫\"幼体快速成长。超蠕虫三天孵化期后，每只多节虫产四只子代，分娩过程会撕裂母体并在数秒内被吞噬。多节虫脑部未发育故免疫灵能攻击，其组织分析极大推动生物战研究。"
 
-#++++++++++
-#ufopaedia.xml:2144
+#
+#: ufopaedia.xml:2144
 msgid "Santuary Clinic"
 msgstr "庇护所诊所"
 
-#++++++++++
-#ufopaedia.xml:1922
+#
+#: ufopaedia.xml:1922
 msgid "X-COM Disruptor Armour"
 msgstr "X-COM瓦解护甲"
 
-#++++++++++
-#research.xml:1791
+#
+#: research.xml:1791
 msgid "Stasis Field Bomb Launcher"
 msgstr "静滞力场炸弹发射器"
 
-#++++++++++
-#ufopaedia.xml:1602
+#
+#: ufopaedia.xml:1602
 msgid "Megapol Armour"
 msgstr "梅加波尔护甲"
 
-#++++++++++
-#research.xml:1739
+#
+#: research.xml:1739
 msgid "Disruptor Inversion Bomb Launcher"
 msgstr "瓦解反转炸弹发射器"
 
-#++++++++++ 
-#ufopaedia.xml:1493
+# 
+#: ufopaedia.xml:1493
 msgid "An expensive, Elerium powered armor system. This armour offers less protection than the Megapol armour on average but will not slow down the wearer so much. The expensive torso section also has an integrated levitation unit which will allow the wearer to fly or hover in the air. This is an extremely useful ability, but an airborne Agent will suffer an accuracy penalty while using weapons or throwing grenades."
 msgstr "艾尔利姆供能的高价装甲系统，平均防护弱于梅加波尔装甲但机动性更强。胸甲集成悬浮单元可实现飞行/悬停，但空中使用武器或投掷手雷会降低精度。"
 
-#++++++++++ 
-#ufopaedia.xml:1603
+# 
+#: ufopaedia.xml:1603
 msgid "This is a standard issue armour which provides very effective protection but inhibits the wearer's speed. The leg, torso, arms and helmet are all separate components and can be mixed with other armour types. Under no circumstances should an Agent be sent into combat without full armour cover."
 msgstr "标准制式护甲，防护卓越但降低穿戴者速度。腿甲、胸甲、臂甲和头盔均为独立组件可混搭。特工作战时必须穿戴完整护甲。"
 
-#++++++++++ 
-#ufopaedia.xml:1942
+# 
+#: ufopaedia.xml:1942
 msgid "The Organizations which operate in Mega-Primus consist of corporations, political groups, criminal gangs and the government. All of them are at risk from Alien infiltration but some are more vulnerable than others. "
 msgstr "巨型都市内的组织包括企业、政治团体、犯罪帮派及政府机构。所有组织都面临异形渗透风险，但部分更为脆弱。"
 
-#++++++++++ 
-#ufopaedia.xml:2655
+# 
+#: ufopaedia.xml:2655
 msgid "Megapol's police Hovercars are the scourge of the slum dwelling criminal gangs. They are well armed and able to travel freely within and outside the city boundaries, scouring the ground or air for unlicensed or criminal vehicles. They are no match for heavier military vehicles, but Megapol is able to manufacture many of these scout cars and can replace any losses. The vehicle's styling is required to conform to city aesthetic ordinances concerning pleasurable design of public vehicles."
 msgstr "梅加波尔警用悬浮车是贫民窟犯罪集团的噩梦。全副武装且可全域机动巡逻，虽不敌重型军用车，但胜在量产能力。造型遵循公共载具美学条例要求。"
 
+
+
+#, c++-format
+msgid "unfriendly towards: {0}"
+msgstr "不友好：{0}"
+
+msgid "Cannot demolish this facility."
+msgstr "无法拆除此设施。"
+
+#, c++-format
+msgid "Turn: {0}   Side: {1}"
+msgstr "回合：{0}   阵营：{1}"
+
+msgid "Enable json call/time tracking"
+msgstr "启用JSON调用/时间追踪"
+
+msgid "A colon-separated list of mods to load (relative to mod directory)"
+msgstr "以冒号分隔的mod加载列表（相对于mod目录）"
+
+msgid "Toggle vanilla mode"
+msgstr "切换经典模式"
+
+#, c++-format
+msgid "{0}: unfriendly towards: {1}"
+msgstr "{0}：对 {1} 不友好"
+
+msgid "use a SHA1 checksum when saving files"
+msgstr "保存文件时使用SHA1校验"
+
+msgid "The number of threads to spawn for the threadpool (0 = queried num_cores)"
+msgstr "线程池线程数（0 = 自动检测核心数）"
+
+msgid "Display number in multi-monitor setup (0..n)"
+msgstr "多显示器设置中的显示编号（0..n）"
+
+msgid "Enable touch events"
+msgstr "启用触摸事件"
+
+#, c++-format
+msgid "Funding adjustment> ${0}"
+msgstr "资金调整> ${0}"
+
+#, c++-format
+msgid "Cargo seized: {0}. By hostile organisation: {1}"
+msgstr "货物被扣押：{0}。扣押方：{1}"
+
+msgid "Semicolon-separated list of scripts to load"
+msgstr "以分号分隔的要加载的脚本列表"
+
+#, c++-format
+msgid "Skill {0}"
+msgstr "技能 {0}"
+
+#, c++-format
+msgid "Vehicle lightly damaged: {0}"
+msgstr "载具轻微受损：{0}"
+
+#, c++-format
+msgid "Cargo arrived: {0}. Supplier: {1}"
+msgstr "货物已到达：{0}。供应商：{1}"
+
+#, c++-format
+msgid "{0} {1}"
+msgstr "{0} {1}"
+
+#, c++-format
+msgid "TU cost per item picked up: {0}"
+msgstr "拾取每件物品的TU消耗：{0}"
+
+#, c++-format
+msgid "Agent has died: {0}"
+msgstr "特工已阵亡：{0}"
+
+#, c++-format
+msgid "{0}: neutral towards: {1}"
+msgstr "{0}：对 {1} 中立"
+
+#, c++-format
+msgid "{0}: hostile towards: X-COM"
+msgstr "{0}：对X-COM敌对"
+
+msgid "Automatically scale up game viewport for modern screens (overrides ScaleX and ScaleY)"
+msgstr "自动放大游戏视口以适配现代屏幕（覆盖X/Y缩放）"
+
+msgid "You have not found any Aliens in this building."
+msgstr "你没有在这栋建筑中找到任何外星人。"
+
+msgid "Unknown unit has died"
+msgstr "未知单位已阵亡"
+
+#, c++-format
+msgid "allied with: {0}"
+msgstr "结盟：{0}"
+
+#, c++-format
+msgid "{0}: Weapon out of ammo"
+msgstr "{0}：武器弹药耗尽"
+
+#, c++-format
+msgid "Vehicle landed with alien loot in base with no alien containment: {0}"
+msgstr "载具携带外星战利品降落，但基地没有外星人收容设施：{0}"
+
+msgid "Sample audio gain (0-20)"
+msgstr "音效音频增益（0-20）"
+
+msgid "Pack saved games into a zip"
+msgstr "将存档打包为zip"
+
+#, c++-format
+msgid ""
+"{0}
+({1} unit(s) transferred)"
+msgstr ""
+"{0}
+（已转移 {1} 个单位）"
+
+msgid "Enable mouse capture for the window"
+msgstr "启用窗口鼠标捕获"
+
+msgid "Path to save game to load at startup"
+msgstr "启动时加载的存档路径"
+
+#, c++-format
+msgid "X-COM {0} destroyed by hostile forces"
+msgstr "X-COM {0} 被敌方摧毁"
+
+#, c++-format
+msgid "Organization attacked: {0}. Attacked by: {1}"
+msgstr "组织遭到攻击：{0}。攻击者：{1}"
+
+msgid "File to output trace json to"
+msgstr "追踪JSON输出文件"
+
+#, c++-format
+msgid "Vehicle moderately damaged: {0}"
+msgstr "载具中度受损：{0}"
+
+#, c++-format
+msgid "Vehicle out of fuel: {0}"
+msgstr "载具燃料耗尽：{0}"
+
+msgid ":' separated list of renderer backends (in preference order)"
+msgstr "以冒号分隔的渲染后端列表（按优先顺序）"
+
+msgid "The Agent is unable to reach the Target Building by Foot. Canceling Mission!"
+msgstr "特工无法步行到达目标建筑。任务取消！"
+
+msgid "Deprecated: use ScreenMode instead"
+msgstr "已弃用：请使用 ScreenMode"
+
+#, c++-format
+msgid "Module lost during recovery: {0}"
+msgstr "回收过程中模块丢失：{0}"
+
+msgid "Show the debug commands on screen"
+msgstr "在屏幕上显示调试命令"
+
+#, c++-format
+msgid "Vehicle heavily damaged: {0}"
+msgstr "载具严重受损：{0}"
+
+#, c++-format
+msgid "Range = {0:2.1f}m."
+msgstr "射程 = {0:2.1f}米。"
+
+msgid "Unable to Reach"
+msgstr "无法到达"
+
+#, c++-format
+msgid "Current income> ${0}"
+msgstr "当前收入> ${0}"
+
+msgid "You must research this weapon and all its ammo types before you can use it"
+msgstr "你必须先研究此武器及其所有弹药类型才能使用"
+
+msgid "Loglevel to print a backtrace to file log (0 = nothing, 1 = error, 2 = warning, 3 = info, 4 = debug)"
+msgstr "回溯文件日志级别（0=无，1=错误，2=警告，3=信息，4=调试）"
+
+#, c++-format
+msgid "Base mission completed at: {0}"
+msgstr "基地任务完成于：{0}"
+
+msgid "Enable scrolling with mouse"
+msgstr "启用鼠标滚动"
+
+#, c++-format
+msgid ""
+"{0}
+TU cost per shot: {1}"
+msgstr ""
+"{0}
+每次射击TU消耗：{1}"
+
+#, c++-format
+msgid "X-COM returning from mission at: {0}"
+msgstr "X-COM从任务返回：{0}"
+
+#, c++-format
+msgid "Cargo arrived: {0}"
+msgstr "货物已到达：{0}"
+
+#, c++-format
+msgid ""
+"Research project completed: {0}
+Do you wish to view the UFOpaedia report?"
+msgstr ""
+"研究项目完成：{0}
+是否查看UFOpaedia报告？"
+
+#, c++-format
+msgid "{0}: Attitude unknown towards: X-COM"
+msgstr "{0}：对X-COM态度未知"
+
+msgid "Override saved game"
+msgstr "覆盖存档"
+
+msgid "Execute remaining orders when player presses end turn button"
+msgstr "玩家按下结束回合按钮时执行剩余指令"
+
+msgid "Number of VoxelMaps to keep in data cache"
+msgstr "数据缓存中保留的体素地图数量"
+
+#, c++-format
+msgid "Agent(s) rearmed: {0}"
+msgstr "特工已重新装备：{0}"
+
+#, c++-format
+msgid "neutral towards: {0}"
+msgstr "中立：{0}"
+
+#, c++-format
+msgid "Vehicle successfully recovered: {0}"
+msgstr "载具成功回收：{0}"
+
+#, c++-format
+msgid "X-COM {0} destroyed due to collapsing building."
+msgstr "X-COM {0} 因建筑倒塌被摧毁。"
+
+msgid "Alien Containment does not exist at this base."
+msgstr "此基地不存在外星人收容设施。"
+
+#, c++-format
+msgid "This Building will cost ${0}"
+msgstr "购买此建筑将花费 ${0}"
+
+msgid "Quit after this many frames - 0 = unlimited"
+msgstr "在此帧数后退出 - 0 = 无限"
+
+msgid "Skip intro video"
+msgstr "跳过开场视频"
+
+msgid "Number of Palettes to keep in data cache"
+msgstr "数据缓存中保留的调色板数量"
+
+msgid "Loglevel to pop up a dialog(0 = nothing, 1 = error, 2 = warning, 3 = info, 4 = debug) "
+msgstr "弹窗日志级别（0=无，1=错误，2=警告，3=信息，4=调试） "
+
+#, c++-format
+msgid "Cargo expired: {0}"
+msgstr "货物已过期：{0}"
+
+msgid "The default tooltip font"
+msgstr "默认工具提示字体"
+
+#, c++-format
+msgid "friendly with: {0}"
+msgstr "友好：{0}"
+
+msgid "Number of Images to keep in data cache"
+msgstr "数据缓存中保留的图像数量"
+
+#, c++-format
+msgid "{0}: Unable to reach destination due to damaged people tube network and / or poor diplomatic relations with Transtellar."
+msgstr "{0}：由于人员管道网络损坏和/或与跨星公司的外交关系恶劣，无法到达目的地。"
+
+msgid "Directory containing mods"
+msgstr "包含mod的目录"
+
+#, c++-format
+msgid "Organization stormed: {0}. Stormed by: {1}"
+msgstr "组织遭到强攻：{0}。强攻者：{1}"
+
+#, c++-format
+msgid "{0}: unfriendly towards: X-COM"
+msgstr "{0}：对X-COM不友好"
+
+msgid "Traveling to: map point"
+msgstr "前往：地图点"
+
+#, c++-format
+msgid "Traveling to: {0}"
+msgstr "前往：{0}"
+
+#, c++-format
+msgid "Vehicle returning to base as damaged: {0}"
+msgstr "载具受损返回基地：{0}"
+
+msgid "Number of rendered font stings to keep in data cache"
+msgstr "数据缓存中保留的渲染字体字符串数量"
+
+#, c++-format
+msgid "Treaty signed: {0}, {1}"
+msgstr "条约已签署：{0}，{1}"
+
+msgid "The language used ingame (empty for system default)"
+msgstr "游戏中使用的语言（留空使用系统默认）"
+
+#, c++-format
+msgid "Cargo expired: {0}. Returned to base"
+msgstr "货物已过期：{0}。已退回基地"
+
+#, c++-format
+msgid "X-COM returning from raid at: {0}"
+msgstr "X-COM从突袭返回：{0}"
+
+#, c++-format
+msgid "{0}: allied towards: {1}"
+msgstr "{0}：与 {1} 结盟"
+
+#, c++-format
+msgid "Delay = {0:.3g}s"
+msgstr "延迟 = {0:.3g}秒"
+
+msgid "use a CRC checksum when saving files"
+msgstr "保存文件时使用CRC校验"
+
+#, c++-format
+msgid "Turns before activation: {0}"
+msgstr "激活前回合数：{0}"
+
+msgid "Delay in milliseconds before showing tooltips (<= 0 to disable)"
+msgstr "显示工具提示前的延迟毫秒数（<= 0 禁用）"
+
+#, c++-format
+msgid "Income for next week> ${0}"
+msgstr "下周收入> ${0}"
+
+#, c++-format
+msgid "{0}: allied with: X-COM"
+msgstr "{0}：与X-COM结盟"
+
+msgid "Global audio gain (0-20)"
+msgstr "全局音频增益（0-20）"
+
+#, c++-format
+msgid "{0}%"
+msgstr "{0}%"
+
+#, c++-format
+msgid "Cargo expired: {0}. Refunded by supplier: {1}"
+msgstr "货物已过期：{0}。供应商 {1} 已退款"
+
+#, c++-format
+msgid "Units Lost: {0}"
+msgstr "损失单位：{0}"
+
+#, c++-format
+msgid "Organization raided: {0}. Raided by: {1}"
+msgstr "组织遭到突袭：{0}。突袭者：{1}"
+
+msgid "Load in background while displaying animated loading screen"
+msgstr "在显示动画加载画面的同时后台加载"
+
+msgid "Loglevel to output to file (0 = nothing, 1 = error, 2 = warning, 3 = info, 4 = debug)"
+msgstr "文件日志级别（0=无，1=错误，2=警告，3=信息，4=调试）"
+
+msgid "The target FPS count - affects game speed!"
+msgstr "目标帧率 - 影响游戏速度！"
+
+msgid "The path containing OpenApoc data"
+msgstr "包含OpenApoc数据的路径"
+
+#, c++-format
+msgid "At {0}"
+msgstr "在 {0}"
+
+#, c++-format
+msgid "Cargo expires soon: {0}"
+msgstr "货物即将过期：{0}"
+
+msgid "The path to the XCom:Apocalypse CD"
+msgstr "XCom:Apocalypse CD路径"
+
+#, c++-format
+msgid "Transferred Alien specimens have arrived: {0}"
+msgstr "转移的外星人标本已到达：{0}"
+
+#, c++-format
+msgid "Scrapped vehicle recovered in irreparable condition: {0}"
+msgstr "报废载具已回收，无法修复：{0}"
+
+#, c++-format
+msgid "Do you really want to override {0}?"
+msgstr "确定要覆盖 {0} 吗？"
+
+#, c++-format
+msgid "{0}: friendly towards: {1}"
+msgstr "{0}：对 {1} 友好"
+
+msgid "Swap interval (0 = tear, 1 = wait for vsync"
+msgstr "交换间隔（0 = 撕裂，1 = 等待垂直同步"
+
+#, c++-format
+msgid "Building under attack: {0}. Attacked by: {1}"
+msgstr "建筑遭到攻击：{0}。攻击者：{1}"
+
+#, c++-format
+msgid "{0}: neutral towards: X-COM"
+msgstr "{0}：对X-COM中立"
+
+msgid "Music changes according to action in battle"
+msgstr "音乐随战斗中的行动变化"
+
+msgid "Initial screen width (in pixels)"
+msgstr "初始屏幕宽度（像素）"
+
+#, c++-format
+msgid "Total Skill: {0}"
+msgstr "总技能：{0}"
+
+#, c++-format
+msgid ""
+"{0} unit(s) hired
+{1} unit(s) fired."
+msgstr ""
+"雇佣 {0} 个单位
+解雇 {1} 个单位。"
+
+msgid ":' separated list of audio backends (in preference order)"
+msgstr "以冒号分隔的音频后端列表（按优先顺序）"
+
+#, c++-format
+msgid "hostile towards: {0}"
+msgstr "敌对：{0}"
+
+msgid "Music audio gain (0-20)"
+msgstr "音乐音频增益（0-20）"
+
+#, c++-format
+msgid "{0}: hostile towards: {1}"
+msgstr "{0}：对 {1} 敌对"
+
+msgid "The number of concurrent samples to play at one time"
+msgstr "同时播放的音效数量"
+
+msgid "EQUIPMENT IN USE"
+msgstr "装备使用中"
+
+msgid "Scale screen in Y direction by (percent)"
+msgstr "Y方向屏幕缩放比例（百分比）"
+
+#, c++-format
+msgid "{0}: friendly with: X-COM"
+msgstr "{0}：对X-COM友好"
+
+#, c++-format
+msgid "Delay = {0}s"
+msgstr "延迟 = {0}秒"
+
+msgid "Number of ImageSets to keep in data cache"
+msgstr "数据缓存中保留的图像集数量"
+
+msgid "Mode: {windowed,fullscreen,borderless}"
+msgstr "模式：{窗口化,全屏,无边框}"
+
+msgid "Scale screen in X direction by (percent)"
+msgstr "X方向屏幕缩放比例（百分比）"
+
+msgid "Initial screen height (in pixels)"
+msgstr "初始屏幕高度（像素）"
+
+msgid "Directory containing saved games"
+msgstr "存档目录"
+
+#, c++-format
+msgid ""
+"Research project completed: {0}\n"
+"Do you wish to view the UFOpaedia report?"
+msgstr ""
+"研究项目完成：{0}\n"
+"是否查看UFOpaedia报告？"
+
+#, c++-format
+msgid ""
+"{0} unit(s) hired\n"
+"{1} unit(s) fired."
+msgstr ""
+"雇佣 {0} 个单位\n"
+"解雇 {1} 个单位。"
+
+#, c++-format
+msgid ""
+"{0}\n"
+"({1} unit(s) transferred)"
+msgstr ""
+"{0}\n"
+"（已转移 {1} 个单位）"
+
+#, c++-format
+msgid ""
+"{0}\n"
+"TU cost per shot: {1}"
+msgstr ""
+"{0}\n"
+"每次射击TU消耗：{1}"
+
+msgid "':' separated list of audio backends (in preference order)"
+msgstr "以冒号分隔的音频后端列表（按优先顺序）"
+
+msgid "':' separated list of renderer backends (in preference order)"
+msgstr "以冒号分隔的渲染后端列表（按优先顺序）"
+
+msgid "ALIENS"
+msgstr "外星人"
+
+msgid "Default"
+msgstr "默认"
+
+msgid "Guards"
+msgstr "守卫"
+
+msgid "Civilians"
+msgstr "平民"

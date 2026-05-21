@@ -168,45 +168,45 @@ UString GameAgentEvent::message()
 		case GameEventType::HostileSpotted:
 			return tr("Hostile unit spotted");
 		case GameEventType::AgentBrainsucked:
-			return format(tr("Unit brainsucked: {0}"), agent->name);
+			return format(tr("Unit brainsucked: {0}"), tr(agent->name));
 		case GameEventType::AgentDiedBattle:
-			return format(tr("Unit has died: {0}"), agent->name);
+			return format(tr("Unit has died: {0}"), tr(agent->name));
 		case GameEventType::HostileDied:
-			return format(tr("Hostile unit has died: {0}"), agent->name);
+			return format(tr("Hostile unit has died: {0}"), tr(agent->name));
 		case GameEventType::UnknownDied:
 			return tr("Unknown unit has died");
 		case GameEventType::AgentCriticallyWounded:
-			return format(tr("Unit critically wounded: {0}"), agent->name);
+			return format(tr("Unit critically wounded: {0}"), tr(agent->name));
 		case GameEventType::AgentBadlyInjured:
-			return format(tr("Unit badly injured: {0}"), agent->name);
+			return format(tr("Unit badly injured: {0}"), tr(agent->name));
 		case GameEventType::AgentInjured:
-			return format(tr("Unit injured: {0}"), agent->name);
+			return format(tr("Unit injured: {0}"), tr(agent->name));
 		case GameEventType::AgentUnderFire:
-			return format(tr("Unit under fire: {0}"), agent->name);
+			return format(tr("Unit under fire: {0}"), tr(agent->name));
 		case GameEventType::AgentUnconscious:
-			return format(tr("Unit has lost consciousness: {0}"), agent->name);
+			return format(tr("Unit has lost consciousness: {0}"), tr(agent->name));
 		case GameEventType::AgentLeftCombat:
-			return format(tr("Unit has left combat zone: {0}"), agent->name);
+			return format(tr("Unit has left combat zone: {0}"), tr(agent->name));
 		case GameEventType::AgentFrozen:
-			return format(tr("Unit has frozen: {0}"), agent->name);
+			return format(tr("Unit has frozen: {0}"), tr(agent->name));
 		case GameEventType::AgentBerserk:
-			return format(tr("Unit has gone berserk: {0}"), agent->name);
+			return format(tr("Unit has gone berserk: {0}"), tr(agent->name));
 		case GameEventType::AgentPanicked:
-			return format(tr("Unit has panicked: {0}"), agent->name);
+			return format(tr("Unit has panicked: {0}"), tr(agent->name));
 		case GameEventType::AgentPanicOver:
-			return format(tr("Unit has stopped panicking: {0}"), agent->name);
+			return format(tr("Unit has stopped panicking: {0}"), tr(agent->name));
 		case GameEventType::AgentPsiAttacked:
-			return format(tr("Psionic attack on unit: {0}"), agent->name);
+			return format(tr("Psionic attack on unit: {0}"), tr(agent->name));
 		case GameEventType::AgentPsiControlled:
-			return format(tr("Unit under psionic control: {0}"), agent->name);
+			return format(tr("Unit under psionic control: {0}"), tr(agent->name));
 		case GameEventType::AgentPsiOver:
-			return format(tr("Unit freed from psionic control: {0}"), agent->name);
+			return format(tr("Unit freed from psionic control: {0}"), tr(agent->name));
 		case GameEventType::NoLOF:
 			return tr("No line of fire");
 		case GameEventType::AgentPsiProbed:
 			return "";
 		case GameEventType::AgentOutOfAmmo:
-			return format(tr("{0}: Out of ammo"), agent->name);
+			return format(tr("{0}: Out of ammo"), tr(agent->name));
 		default:
 			LogError("Invalid agent event type");
 			break;
@@ -219,27 +219,27 @@ UString GameBuildingEvent::message()
 	switch (type)
 	{
 		case GameEventType::MissionCompletedBuildingNormal:
-			return format(tr("X-COM returning from mission at: {0}"), building->name);
+			return format(tr("X-COM returning from mission at: {0}"), tr(building->name));
 		case GameEventType::MissionCompletedBuildingRaid:
-			return format(tr("X-COM returning from raid at: {0}"), building->name);
+			return format(tr("X-COM returning from raid at: {0}"), tr(building->name));
 		case GameEventType::BuildingAttacked:
-			return format(tr("Building under attack: {0}. Attacked by: {1}"), building->name,
-			              actor->name);
+			return format(tr("Building under attack: {0}. Attacked by: {1}"), tr(building->name),
+			              tr(actor->name));
 		case GameEventType::OrganisationAttackBuilding:
-			return format(tr("Organization attacked: {0}. Attacked by: {1}"), building->owner->name,
-			              actor->name);
+			return format(tr("Organization attacked: {0}. Attacked by: {1}"), tr(building->owner->name),
+			              tr(actor->name));
 		case GameEventType::OrganisationRaidBuilding:
-			return format(tr("Organization raided: {0}. Raided by: {1}"), building->owner->name,
-			              actor->name);
+			return format(tr("Organization raided: {0}. Raided by: {1}"), tr(building->owner->name),
+			              tr(actor->name));
 		case GameEventType::OrganisationStormBuilding:
-			return format(tr("Organization stormed: {0}. Stormed by: {1}"), building->owner->name,
-			              actor->name);
+			return format(tr("Organization stormed: {0}. Stormed by: {1}"), tr(building->owner->name),
+			              tr(actor->name));
 		case GameEventType::OrganisationTreatySigned:
-			return format(tr("Treaty signed: {0}, {1}"), building->owner->name, actor->name);
+			return format(tr("Treaty signed: {0}, {1}"), tr(building->owner->name), tr(actor->name));
 		case GameEventType::AlienSpotted:
 			return tr("Live Alien spotted.");
 		case GameEventType::CargoExpiresSoon:
-			return format(tr("Cargo expires soon: {0}"), building->name);
+			return format(tr("Cargo expires soon: {0}"), tr(building->name));
 		case GameEventType::CommenceInvestigation:
 			return "";
 		default:
@@ -265,7 +265,7 @@ UString GameBaseEvent::message()
 				else
 				{
 					return format(tr("Cargo expired: {0}. Refunded by supplier: {1}"), base->name,
-					              actor->name);
+					              tr(actor->name));
 				}
 			}
 			else
@@ -275,12 +275,12 @@ UString GameBaseEvent::message()
 		case GameEventType::CargoSeized:
 		{
 			return format(tr("Cargo seized: {0}. By hostile organisation: {1}"), base->name,
-			              actor->name);
+			              tr(actor->name));
 		}
 		case GameEventType::CargoArrived:
 			if (actor)
 			{
-				return format(tr("Cargo arrived: {0}. Supplier: {1}"), base->name, actor->name);
+				return format(tr("Cargo arrived: {0}. Supplier: {1}"), base->name, tr(actor->name));
 			}
 			else
 			{
@@ -313,7 +313,7 @@ UString GameBattleEvent::message()
 	{
 		case GameEventType::NewTurn:
 			return format(tr("Turn: {0}   Side: {1}"), battle->currentTurn,
-			              battle->currentActiveOrganisation->name);
+			              tr(battle->currentActiveOrganisation->name));
 		default:
 			LogError("Invalid battle event type");
 			break;
@@ -384,6 +384,8 @@ GameSomethingDiedEvent::GameSomethingDiedEvent(GameEventType type, UString name,
                                                Vec3<int> location)
     : GameEvent(type), location(location)
 {
+	name=tr(name);
+	actor=tr(actor);
 	switch (type)
 	{
 		case GameEventType::AgentDiedCity:
