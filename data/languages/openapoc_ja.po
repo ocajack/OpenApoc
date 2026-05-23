@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenApoc\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2026-05-22 09:27+0800\n"
+"PO-Revision-Date: 2026-05-24 03:42+0800\n"
 "Last-Translator: Jack Yang, 2025\n"
 "Language-Team: Chinese (China) (http://app.transifex.com/x-com-apocalypse/"
 "apocalypse/language/zh_CN/)\n"
@@ -2183,7 +2183,7 @@ msgid "Reasonable"
 msgstr "合理的な"
 
 msgid "OK"
-msgstr "OK"
+msgstr "確認"
 
 msgid "Nice"
 msgstr "ナイス"
@@ -11688,3 +11688,12 @@ msgstr "未保存の進行状況は失われます。続行しますか？"
 
 msgid "Day {0}"
 msgstr "日 {0}"
+
+msgid "DELETE SAVED GAME"
+msgstr "セーブデータを削除"
+
+msgid "Do you really want to delete {0}?"
+msgstr "本当に{0}を削除しますか？"
+
+msgid "New save slot"
+msgstr "新セーブ槽"

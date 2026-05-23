@@ -11638,3 +11638,13 @@ msgstr "저장되지 않은 진행 상황이 손실됩니다. 계속하시겠습
 
 msgid "Day {0}"
 msgstr "날짜 {0}"
+
+msgid "DELETE SAVED GAME"
+msgstr "세ーブ 데이터를 삭제"
+
+msgid "Do you really want to delete {0}?"
+msgstr "정말로 {0}를 삭제하시겠습니까?"
+
+msgid "New save slot"
+msgstr "새로운 세ーブ槽"
+

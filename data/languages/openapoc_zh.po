@@ -10475,3 +10475,11 @@ msgstr "未保存的进度将会丢失。是否继续？"
 msgid "Day {0}"
 msgstr "天 {0}"
 
+msgid "DELETE SAVED GAME"
+msgstr "删除存档"
+
+msgid "Do you really want to delete {0}?"
+msgstr "确定要删除 {0} 吗？"
+
+msgid "New save slot"
+msgstr "新存档槽"

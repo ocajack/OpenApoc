@@ -36,6 +36,8 @@ extern ConfigOptionInt fontShadowRadius;
 extern ConfigOptionInt fontBigWidth;
 extern ConfigOptionInt fontSmallWidth;
 extern ConfigOptionInt fontSmallsetWidth;
+
+void saveFontDefaults();
 #endif
 
 extern ConfigOptionInt frameLimit;

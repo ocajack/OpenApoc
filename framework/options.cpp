@@ -252,17 +252,17 @@ ConfigOptionBool mouseCaptureOption("Framework", "MouseCapture",
 
 #if ENABLE_FREETYPE
 ConfigOptionString fontName("Framework", "FontName", tr("TrueType font name for CJK rendering"),
-                            "msyhl.ttc");
+                            "wqy-microhei-lite.ttc");
 ConfigOptionInt fontBigSize("Framework", "FontBigSize", tr("Big font size in pixels"), 20);
-ConfigOptionInt fontSmallSize("Framework", "FontSmallSize", tr("Small font size in pixels"), 11);
+ConfigOptionInt fontSmallSize("Framework", "FontSmallSize", tr("Small font size in pixels"), 12);
 ConfigOptionInt fontSmallsetSize("Framework", "FontSmallsetSize",
                                  tr("Smallset font size in pixels"), 10);
 ConfigOptionInt fontCharInterval("Framework", "FontCharInterval", tr("Character interval"), 1);
 ConfigOptionInt fontShadowRadius("Framework", "FontShadowRadius", tr("Font shadow radius"), 3);
-ConfigOptionInt fontBigWidth("Framework", "FontBigWidth", tr("Big font width in pixels"), 12);
-ConfigOptionInt fontSmallWidth("Framework", "FontSmallWidth", tr("Small font width in pixels"), 8);
+ConfigOptionInt fontBigWidth("Framework", "FontBigWidth", tr("Big font width in pixels"), 0);
+ConfigOptionInt fontSmallWidth("Framework", "FontSmallWidth", tr("Small font width in pixels"), 9);
 ConfigOptionInt fontSmallsetWidth("Framework", "FontSmallsetWidth",
-                                  tr("Smallset font width in pixels"), 7);
+                                  tr("Smallset font width in pixels"), 0);
 #endif
 
 ConfigOptionInt targetFPS("Framework", "TargetFPS",
@@ -551,5 +551,20 @@ ConfigOptionString modPath("Game", "ModPath", tr("Directory containing mods"), "
 ConfigOptionBool asyncLoading("Game", "ASyncLoading",
                               tr("Load in background while displaying animated loading screen"),
                               true);
+
+#if ENABLE_FREETYPE
+void saveFontDefaults()
+{
+	config().set("Framework.FontName", fontName.get());
+	config().set("Framework.FontBigSize", fontBigSize.get());
+	config().set("Framework.FontBigWidth", fontBigWidth.get());
+	config().set("Framework.FontSmallSize", fontSmallSize.get());
+	config().set("Framework.FontSmallWidth", fontSmallWidth.get());
+	config().set("Framework.FontSmallsetSize", fontSmallsetSize.get());
+	config().set("Framework.FontSmallsetWidth", fontSmallsetWidth.get());
+	config().set("Framework.FontCharInterval", fontCharInterval.get());
+	config().set("Framework.FontShadowRadius", fontShadowRadius.get());
+}
+#endif
 
 } // namespace OpenApoc::Options

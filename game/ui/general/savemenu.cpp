@@ -359,7 +359,7 @@ void SaveMenu::tryToDeleteSavedGame(sp<Control> &slotControl)
 		    }
 	    });
 	sp<MessageBox> messageBox = mksp<MessageBox>(
-	    MessageBox("Delete saved game", "Do you really want to delete " + slot->getName() + "?",
+	    MessageBox("Delete saved game", format(tr("Do you really want to delete {0}?"), slot->getName()),
 	               MessageBox::ButtonOptions::YesNo, std::move(onSuccess), nullptr));
 
 	fw().stageQueueCommand({StageCmd::Command::PUSH, messageBox});

@@ -189,6 +189,10 @@ Framework::Framework(const UString programName, bool createWindow)
 
 	Options::dumpOptionsToLog();
 
+#if ENABLE_FREETYPE
+	Options::saveFontDefaults();
+#endif
+
 	// This is always set, the default being an empty string (which correctly chooses 'system
 	// language')
 	UString desiredLanguageName;

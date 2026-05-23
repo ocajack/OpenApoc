@@ -282,7 +282,7 @@ add_custom_target(tidy ${CLANG_TIDY}
 
 # set(LANGUAGES en_GB fr_FR de_DE cs es it pl pt_BR ru_RU uk)
 # Add languages supported by gettext PO files - list should match the base mod - "supported_languages" in tools/extractors/main.cpp
-set(LANGUAGES en zh_CN)
+set(LANGUAGES en zh_CN ja ko ru_RU)
 
 find_package(Gettext)
 if (GETTEXT_FOUND)
