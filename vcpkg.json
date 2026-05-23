@@ -14,14 +14,19 @@
     "boost-program-options",
     "boost-uuid",
     "boost-crc",
-    "libvorbis"
+    "libvorbis",
+    {
+      "name": "freetype",
+      "features": ["brotli", "bzip2", "png", "zlib"]
+    }
   ],
   "features": {
     "launcher": {
       "description": "Build Launcher",
       "dependencies": [
         {
-          "name": "qtbase"
+          "name": "qtbase",
+          "features": ["windeployqt"]
         }
       ]
     }

@@ -33,18 +33,33 @@ set_target_properties(OpenApoc_Launcher PROPERTIES
 set_target_properties(OpenApoc_Launcher PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 if(WIN32)
-	find_program(WINDEPLOYQT_EXECUTABLE windeployqt HINTS "${_qt_bin_dir}")
-	if(NOT WINDEPLOYQT_EXECUTABLE)
-		message(FATAL_ERROR "windeployqt not found")
+	if(Qt6_DIR)
+		get_filename_component(_qt_install_root "${Qt6_DIR}/../../.." ABSOLUTE)
+	elseif(DEFINED QT6_INSTALL_PREFIX)
+		set(_qt_install_root "${QT6_INSTALL_PREFIX}")
 	endif()
-	add_custom_command(TARGET OpenApoc_Launcher POST_BUILD
-			COMMAND "${CMAKE_COMMAND}" -E
-			env PATH="${_qt_bin_dir}" "${WINDEPLOYQT_EXECUTABLE}"
-			--verbose 0
-			--no-compiler-runtime
-			--no-opengl-sw
-			$<TARGET_FILE:OpenApoc_Launcher>
-			COMMENT "Deploying Qt..."
+	if(_qt_install_root)
+		set(_qt_bin_search_hint "${_qt_install_root}/bin")
+	endif()
+
+	find_program(WINDEPLOYQT_EXECUTABLE windeployqt
+		HINTS "${_qt_bin_search_hint}"
+		      "${_qt_bin_dir}"
 	)
+
+	if(NOT WINDEPLOYQT_EXECUTABLE)
+		message(WARNING "windeployqt not found - vcpkg will auto-deploy Qt DLLs")
+	else()
+		get_filename_component(_windeployqt_dir "${WINDEPLOYQT_EXECUTABLE}" DIRECTORY)
+		add_custom_command(TARGET OpenApoc_Launcher POST_BUILD
+				COMMAND "${CMAKE_COMMAND}" -E
+				env PATH="${_windeployqt_dir}" "${WINDEPLOYQT_EXECUTABLE}"
+				--verbose 0
+				--no-compiler-runtime
+				--no-opengl-sw
+				$<TARGET_FILE:OpenApoc_Launcher>
+				COMMENT "Deploying Qt..."
+		)
+	endif()
 endif(WIN32)
 
